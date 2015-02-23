@@ -4,13 +4,14 @@ var _ = require('underscore');
 var sauceBrowsers = _.reduce([
   ['firefox', '35'],
   ['firefox', '30'],
-  ['firefox', '20'],
+  ['firefox', '21'],
   ['firefox', '11'],
   ['firefox', '4'],
 
   ['chrome', '40'],
-  ['chrome', '35'],
-  ['chrome', '28'],
+  ['chrome', '39'],
+  ['chrome', '31'],
+  ['chrome', '26'],
 
   ['internet explorer', '11', 'Windows 8.1'],
   ['internet explorer', '10', 'Windows 8'],
@@ -22,6 +23,8 @@ var sauceBrowsers = _.reduce([
   ['opera', '12'],
   ['opera', '11'],
 
+  ['android', '5'],
+  ['android', '4.4'],
   ['android', '4.3'],
   ['android', '4.0'],
 
@@ -73,10 +76,10 @@ module.exports = function(config) {
     },
 
     captureTimeout: 120000,
-    customLaunchers: sauceBrowsers
+    customLaunchers: sauceBrowsers,
 
     // Browsers to launch, commented out to prevent karma from starting
     // too many concurrent browsers and timing sauce out.
-    // browsers: _.keys(sauceBrowsers)
+    browsers: _.keys(sauceBrowsers)
   });
 };
